@@ -26,6 +26,7 @@ mean, std = joblib.load('scaler.pkl')
 
 # Streamlit UI
 st.title("Energy Efficiency Prediction Using KNN")
+st.write("Wanna meet the devs? [Click Here](https://wildanaziz.vercel.app)")
 st.write("Masukkan parameter bangunan untuk memprediksi Heating Load dan Cooling Load")
 
 
