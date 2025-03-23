@@ -87,15 +87,6 @@ Dalam beberapa kasus, nilai 0 akan dianggap sebagai *nilai yang hilang*.
 ### Data Visualization
 - Univariate Analysis
 
-![univar_analysis](images/Univar.png)
-Figure 1. Univariate Analysis
-
-Dari hasil analisis univariat pada dataset, terlihat bahwa kedua variabel target, yaitu Heating Load dan Cooling Load, memiliki distribusi data yang bervariasi. Heating Load cenderung tersebar dalam rentang 10 hingga 40, dengan pola distribusi yang relatif merata, menunjukkan adanya variasi yang signifikan antar sampel. 
-
-Sementara itu, Cooling Load memiliki rentang antara 15 hingga 45 dengan distribusi yang lebih terfokus pada nilai-nilai di tengah rentang tersebut. Untuk fitur-fitur prediktor, seperti Relative Compactness, Surface Area, Wall Area, Roof Area, dan Overall Height, terlihat bahwa distribusi data cenderung terkonsentrasi pada nilai-nilai tertentu, yang mengindikasikan sifat data diskret atau kategori. Roof Area, misalnya, memiliki sebagian besar data terkonsentrasi pada beberapa kategori spesifik, sedangkan Wall Area menunjukkan distribusi yang lebih bervariasi. Selain itu, fitur Orientation, Glazing Area, dan Glazing Area Distribution juga didominasi oleh nilai-nilai diskret tertentu. 
-
-Secara keseluruhan, karakteristik dataset ini menunjukkan bahwa ada kemungkinan hubungan non-linear antara beberapa fitur dan target, sehingga analisis lanjutan seperti korelasi atau analisis feature importance diperlukan untuk menentukan pengaruh masing-masing fitur terhadap Heating Load dan Cooling Load.
-
 - Multivariate Analysis
 ![Correlation_Matrix](images/corr.png)
 Figure 2. Correlation Matrix
@@ -187,15 +178,11 @@ Tabel di bawah ini menunjukkan hasil prediksi untuk setiap model:
 
 Dari data tersebut, terlihat bahwa model regresi dapat memprediksi Beban Pemanasan dan Beban Pendinginan berdasarkan data komponen yang diberikan. model KNN dapat memprediksi hingga tingkat kesalahan kurang dari 5%, yang menunjukkan prediksi yang sangat sesuai dengan nilai aktual, meskipun terkadang terdapat sedikit perbedaan.
 
-Namun demikian, masih ada ruang untuk perbaikan, khususnya dalam proses pemodelan. Meningkatkan kinerja model KNN melalui penyetelan hiperparameter dapat mengurangi kesalahan lebih lanjut, sehingga memungkinkan prediksi yang lebih akurat untuk beban pemanasan dan beban pendinginan dengan deviasi yang minimal.
+Namun demikian, masih ada ruang untuk perbaikan, khususnya dalam proses pemodelan. Meningkatkan kinerja model KNN melalui cross validation dapat mengurangi kesalahan lebih lanjut, sehingga memungkinkan prediksi yang lebih akurat untuk beban pemanasan dan beban pendinginan dengan deviasi yang minimal.
 
 ## Kesimpulan
 
-Dalam evaluasi model, hasilnya menunjukkan bahwa model XGBRegressor memberikan kinerja terbaik, mencapai RMSE 0,98 pada set data uji. Hal ini menunjukkan bahwa XGBRegressor dapat memprediksi beban pemanasan dan beban pendinginan dengan kesalahan kurang dari 1% dari nilai aktual.
-
-Model lain, seperti Random Forest, juga menghasilkan kesalahan yang relatif rendah, meskipun model KNN menunjukkan kesalahan yang sedikit lebih tinggi sebagai perbandingan. Meskipun demikian, semua model tersebut efektif dalam memprediksi beban pemanasan dan beban pendinginan dengan akurasi yang masuk akal.
-
-Proyek ini berhasil memenuhi tujuannya untuk memprediksi beban pemanasan dan beban pendinginan menggunakan model pembelajaran mesin. Namun, penyetelan hiperparameter lebih lanjut dari XGBRegressor dapat mengurangi kesalahan lebih banyak lagi, memastikan keandalan yang lebih besar dalam prediksi.
+Proyek ini berhasil memenuhi tujuannya untuk memprediksi beban pemanasan dan beban pendinginan menggunakan model pembelajaran mesin dengan eror dibawah 1%. Namun, tahap lebih lanjut seperti cross validation dapat mengurangi tingkat eror dan memastikan keandalan yang lebih besar dalam prediksi.
 
 # References
 ##### S. K. Tiwari, J. Kaur, dan R. Kaur, "Predictive Modelling for Heating and Cooling Load Systems of Residential Building," 2024. [Online]. Tersedia: https://ieeexplore.ieee.org/document/10503016/authors#authors.
