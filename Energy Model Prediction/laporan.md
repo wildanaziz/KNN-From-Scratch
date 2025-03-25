@@ -85,8 +85,6 @@ Pada beberapa komponen seperti *Area Kaca*, *Distribusi Area Kaca*, memiliki nil
 Dalam beberapa kasus, nilai 0 akan dianggap sebagai *nilai yang hilang*.
 
 ### Data Visualization
-- Univariate Analysis
-
 - Multivariate Analysis
 ![Correlation_Matrix](images/corr.png)
 Figure 2. Correlation Matrix
@@ -154,7 +152,7 @@ Tabel di bawah ini menunjukkan loss untuk setiap model:
 
 | Model | Train RMSE | Test RMSE |
 |-------|------------|-----------|
-| KNN   | 1.882784   | 2.561768  |
+| KNN   | 1.286131   | 1.95599   |
 
 Plot di bawah ini menunjukkan loss untuk setiap model:
 
@@ -182,7 +180,7 @@ Namun demikian, masih ada ruang untuk perbaikan, khususnya dalam proses pemodela
 
 ## Kesimpulan
 
-Proyek ini berhasil memenuhi tujuannya untuk memprediksi beban pemanasan dan beban pendinginan menggunakan model pembelajaran mesin dengan eror dibawah 1%. Namun, tahap lebih lanjut seperti cross validation dapat mengurangi tingkat eror dan memastikan keandalan yang lebih besar dalam prediksi.
+Proyek ini berhasil memenuhi tujuannya untuk memprediksi beban pemanasan dan beban pendinginan menggunakan model pembelajaran mesin dengan eror dibawah 5%. Namun, tahap lebih lanjut seperti cross validation dapat mengurangi tingkat eror dan memastikan keandalan yang lebih besar dalam prediksi.
 
 # References
 ##### S. K. Tiwari, J. Kaur, dan R. Kaur, "Predictive Modelling for Heating and Cooling Load Systems of Residential Building," 2024. [Online]. Tersedia: https://ieeexplore.ieee.org/document/10503016/authors#authors.
