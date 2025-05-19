@@ -2,30 +2,12 @@ import streamlit as st
 import numpy as np
 import joblib
 
-class KNNRegresi:
-    def __init__(self, n_neighbors=3):
-        self.n_neighbors = n_neighbors
-
-    def fit(self, X_train, y_train):
-        self.X_train = np.array(X_train)
-        self.y_train = np.array(y_train)
-
-    def predict(self, X_test):
-        X_test = np.array(X_test)
-        predictions = []
-        for x in X_test:
-            distances = np.sqrt(np.sum((self.X_train - x) ** 2, axis=1))
-            nearest_indices = distances.argsort()[:self.n_neighbors]
-            nearest_values = self.y_train[nearest_indices]
-            predictions.append(np.mean(nearest_values, axis=0))
-        return np.array(predictions)
-
 # Load model KNN dan parameter normalisasi
-knn = joblib.load('knn_model.pkl')
+mlp = joblib.load('mlp_model.pkl')
 mean, std = joblib.load('scaler.pkl')
 
 # Streamlit UI
-st.title("Energy Efficiency Prediction Using KNN")
+st.title("Energy Efficiency Prediction Using MLP")
 st.write("Wanna meet the devs? [Click Here](https://wildanaziz.vercel.app)")
 st.write("Masukkan parameter bangunan untuk memprediksi Heating Load dan Cooling Load")
 
@@ -78,7 +60,7 @@ with col2:
         input_data = np.array([[relative_compactness, surface_area, wall_area, roof_area, 
                                  overall_height, glazing_area, glazing_area_distribution]])
         input_data = (input_data - mean) / std  # Normalisasi input
-        prediction = knn.predict(input_data)
+        prediction = mlp.predict(input_data)
         heating_load = prediction[0][0]  # kWh/m²
         cooling_load = prediction[0][1]  # kWh/m²
 
